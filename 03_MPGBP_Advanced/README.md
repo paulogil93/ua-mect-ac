@@ -38,7 +38,7 @@ network 192.3.1.0 mask 255.255.255.0
 network 192.3.2.0 mask 255.255.255.0
 ```
 
-# Communities
+## Communities
 
 Communities can be used to label route announcements using multiple criteria, the label allows to filter or assign attribute values accordingly.
 
@@ -95,7 +95,7 @@ network 192.1.1.0 mask 255.255.255.128
 network 192.1.1.128 mask 255.255.255.128
 ```
 
-# Communities
+## Communities
 
 ```
 config terminal
@@ -192,7 +192,7 @@ address-family ipv4 unicast
 neighbor 200.10.1.10 route-map routes-out out
 ```
 
-# BGP conflicts with IGP routing
+## BGP conflicts with IGP routing
 
 ```
 router ospf 100
@@ -201,14 +201,14 @@ no redistribute bgp 200
 default-information originate always metric 5
 ```
 
-# Router 1 as BGP's preferred exit from the AS
+## Router 1 as BGP's preferred exit from the AS
 
 ```
 router bgp 200
 bgp default local-preference 200
 ```
 
-# BGP Neighbor relations over IP-IP tunnels
+## BGP Neighbor relations over IP-IP tunnels
 
 ```
 interface Tunnel 0
@@ -302,7 +302,7 @@ address-family ipv4 unicast
 neighbor 200.2.11.11 route-map routes-out out
 ```
 
-# Local Preference based on Community value
+## Local Preference based on Community value
 
 Local preference attribute can be used to chose (within the AS) between multiple routes to the same destination.
 
@@ -321,14 +321,14 @@ address-family ipv4 unicast
 neighbor 200.2.11.11 route-map routes-in in
 ```
 
-# Remove the local-preference changing route-map
+## Remove the local-preference changing route-map
 
 ```
 router bgp 200
 no neighbor 200.2.11.11 route-map routes-in in
 ```
 
-# BGP conflicts with IGP routing
+## BGP conflicts with IGP routing
 
 ```
 router ospf 100
@@ -336,7 +336,7 @@ no redistribute bgp 200 subnets
 default-information originate always metric 10
 ```
 
-# BGP Neighbor relations over IP-IP tunnels
+## BGP Neighbor relations over IP-IP tunnels
 
 ```
 interface Tunnel 0
