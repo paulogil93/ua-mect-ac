@@ -1,0 +1,18 @@
+Dec 11 14:33:06.108 HYPERVISOR: Release 0.2.22-amd64/Linux (tag 2022052400)
+Dec 11 14:33:06.108 HYPERVISOR: Started on IP = localhost, TCP port = 53997.
+Dec 11 14:33:06.120 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 11 14:33:06.121 HYPERVISOR: exec_cmd: hypervisor working_dir /home/paulogil/GNS3/projects/03_MPBGP_Advanced/project-files/dynamips 
+Dec 11 14:33:06.121 GENERAL: working_dir=/home/paulogil/GNS3/projects/03_MPBGP_Advanced/project-files/dynamips
+Dec 11 14:33:06.121 HYPERVISOR: exec_cmd: ethsw create netA.1 
+Dec 11 14:33:06.887 HYPERVISOR: exec_cmd: nio create_udp udp-2f50eda0-1103-41c7-a593-78d1757e4204 10001 127.0.0.1 10000 
+Dec 11 14:33:06.888 HYPERVISOR: exec_cmd: ethsw add_nio netA.1 udp-2f50eda0-1103-41c7-a593-78d1757e4204 
+Dec 11 14:33:06.892 HYPERVISOR: exec_cmd: ethsw set_access_port netA.1 udp-2f50eda0-1103-41c7-a593-78d1757e4204 1 
+Dec 11 14:34:14.646 HYPERVISOR: exec_cmd: ethsw set_access_port netA.1 udp-2f50eda0-1103-41c7-a593-78d1757e4204 1 
+Dec 11 14:34:15.029 HYPERVISOR: exec_cmd: ethsw set_access_port netA.1 udp-2f50eda0-1103-41c7-a593-78d1757e4204 1 
+Dec 11 14:34:22.543 HYPERVISOR: exec_cmd: ethsw set_access_port netA.1 udp-2f50eda0-1103-41c7-a593-78d1757e4204 1 
+Dec 11 14:34:53.621 HYPERVISOR: exec_cmd: ethsw set_access_port netA.1 udp-2f50eda0-1103-41c7-a593-78d1757e4204 1 
+Dec 11 14:35:01.899 HYPERVISOR: exec_cmd: ethsw set_access_port netA.1 udp-2f50eda0-1103-41c7-a593-78d1757e4204 1 
+Dec 11 14:35:08.538 HYPERVISOR: exec_cmd: ethsw delete netA.1 
+Dec 11 14:35:08.544 HYPERVISOR: exec_cmd: hypervisor stop 
+Dec 11 14:35:08.757 HYPERVISOR: Stopped.
+Dec 11 14:35:08.757 GENERAL: reset done.
