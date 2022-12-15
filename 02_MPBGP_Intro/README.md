@@ -195,5 +195,5 @@ network 2001:30:30::/64
 
 ## Questions
 
-7.b. Identify the main disadvantage of network aggregates.
+- 7.b. Identify the main disadvantage of network aggregates.
 Network aggregate is announced, but there might not be any networks to be announced at all.
