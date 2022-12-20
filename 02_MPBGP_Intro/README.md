@@ -195,9 +195,6 @@ network 2001:30:30::/64
 
 ## Questions
 
-- Exercises 2,3 and 4;
-
-- 7.a. Explain why no UPDATE BGP messages were captured and Router 1 does not know that network
-192.20.1.0/20 is not accessible.
-
 - 7.b. Identify the main disadvantage of network aggregates.
+
+Network aggregate is announced, but there might not be any networks to be announced at all.
