@@ -108,6 +108,73 @@ tunnel mpls traffic-eng auto-bw
 tunnel mpls traffic-eng path-option 1 dynamic
 ```
 
+### Disable tunnels in RouterA
+
+```
+configure terminal
+
+interface range tunnel 1-4
+shutdown
+```
+
+### MPLS-VPN (with MP-BGP and VRF)
+
+```
+configure terminal
+
+mpls ip
+
+ip vrf VPN-1
+rd 200:1
+route-target export 200:1
+route-target import 200:1
+
+ip vrf VPN-2
+rd 200:2
+route-target export 200:2
+route-target import 200:2
+
+interface f0/0
+ip vrf forwarding VPN-1
+ip address 192.3.1.10 255.255.255.0
+
+interface f0/1
+ip vrf forwarding VPN-2
+ip address 192.3.2.10 255.255.255.0
+
+interface f1/0
+mpls ip
+interface f1/1
+mpls ip
+
+router bgp 200
+bgp router-id 10.10.10.10
+neighbor 192.2.0.11 remote-as 200
+neighbor 192.2.0.11 update-source Loopback0
+
+address-family vpnv4
+neighbor 192.2.0.11 activate
+neighbor 192.2.0.11 send-community both
+
+address-family ipv4 vrf VPN-1
+redistribute connected
+
+address-family ipv4 vrf VPN-2
+redistribute connected
+```
+
+### Default route from the VPN-1 to Router1
+
+```
+configure terminal
+
+ip route vrf VPN-1 0.0.0.0 0.0.0.0 200.10.1.1 global
+ip route 192.3.1.0 255.255.255.0 FastEthernet0/0
+
+router ospf 1
+redistribute static subnets
+```
+
 ## Router B
 
 ```
@@ -213,6 +280,53 @@ tunnel mpls traffic-eng autoroute announce
 tunnel mpls traffic-eng auto-bw
 tunnel mpls traffic-eng path-option 1 dynamic
 ```
+
+### MPLS-VPN (with MP-BGP and VRF)
+
+```
+configure terminal
+
+mpls ip
+
+ip vrf VPN-1
+rd 200:1
+route-target export 200:1
+route-target import 200:1
+
+ip vrf VPN-2
+rd 200:2
+route-target export 200:2
+route-target import 200:2
+
+interface f0/0
+ip vrf forwarding VPN-1
+ip address 192.1.1.11 255.255.255.128
+
+interface f0/1
+ip vrf forwarding VPN-2
+ip address 192.1.1.139 255.255.255.128
+
+interface f1/0
+mpls ip
+interface f1/1
+mpls ip
+
+router bgp 200
+bgp router-id 11.11.11.11
+neighbor 192.2.0.10 remote-as 200
+neighbor 192.2.0.10 update-source Loopback0
+
+address-family vpnv4
+neighbor 192.2.0.10 activate
+neighbor 192.2.0.10 send-community both
+
+address-family ipv4 vrf VPN-1
+redistribute connected
+
+address-family ipv4 vrf VPN-2
+redistribute connected
+```
+
 
 ## Router 1
 
@@ -346,4 +460,23 @@ interface f1/0
 ip rsvp bandwidth 512 512
 interface f1/1
 ip rsvp bandwidth 512 512
+```
+
+### Disable relevant MPLS (RSVP-TE) and OSPF commands in all Routers
+
+```
+configure terminal
+no mpls traffic-eng tunnels
+
+interface range FastEthernet 0/0-1
+no mpls traffic-eng tunnels
+no ip rsvp bandwidth 512 512
+
+interface range FastEthernet 1/0-1
+no mpls traffic-eng tunnels
+no ip rsvp bandwidth 512 512
+
+router ospf 1
+no mpls traffic-eng router-id Loopback0
+no mpls traffic-eng area 0
 ```
