@@ -1,0 +1,72 @@
+Dec 22 15:16:14.466 HYPERVISOR: Release 0.2.22-amd64/Linux (tag 2022052400)
+Dec 22 15:16:14.466 HYPERVISOR: Started on IP = localhost, TCP port = 36665.
+Dec 22 15:16:14.474 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 22 15:16:14.474 HYPERVISOR: exec_cmd: hypervisor working_dir /home/paulogil/GNS3/projects/04_MPLS_Guide/project-files/dynamips 
+Dec 22 15:16:14.474 GENERAL: working_dir=/home/paulogil/GNS3/projects/04_MPLS_Guide/project-files/dynamips
+Dec 22 15:16:14.474 HYPERVISOR: exec_cmd: hypervisor working_dir /home/paulogil/GNS3/projects/04_MPLS_Guide/project-files/dynamips/783ac33f-be1e-4960-9db1-2914c15c4340 
+Dec 22 15:16:14.474 GENERAL: working_dir=/home/paulogil/GNS3/projects/04_MPLS_Guide/project-files/dynamips/783ac33f-be1e-4960-9db1-2914c15c4340
+Dec 22 15:16:14.475 HYPERVISOR: exec_cmd: vm create Router1 1 c7200 
+Dec 22 15:16:14.475 VM: VM Router1 created.
+Dec 22 15:16:14.475 HYPERVISOR: exec_cmd: vm set_con_tcp_port Router1 5015 
+Dec 22 15:16:14.475 HYPERVISOR: exec_cmd: c7200 get_mac_addr Router1 
+Dec 22 15:16:14.475 HYPERVISOR: exec_cmd: vm get_status Router1 
+Dec 22 15:16:14.476 HYPERVISOR: exec_cmd: vm slot_add_binding Router1 0 0 C7200-IO-FE 
+Dec 22 15:16:14.476 HYPERVISOR: exec_cmd: vm set_disk0 Router1 0 
+Dec 22 15:16:14.476 HYPERVISOR: exec_cmd: vm get_status Router1 
+Dec 22 15:16:14.476 HYPERVISOR: exec_cmd: vm set_idle_pc Router1 0x62cc930c 
+Dec 22 15:16:14.477 HYPERVISOR: exec_cmd: vm set_ios Router1 /home/paulogil/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Dec 22 15:16:14.477 HYPERVISOR: exec_cmd: c7200 set_mac_addr Router1 ca01.2a77.0000 
+Dec 22 15:16:14.477 HYPERVISOR: exec_cmd: vm set_nvram Router1 512 
+Dec 22 15:16:14.477 HYPERVISOR: exec_cmd: vm set_ram Router1 512 
+Dec 22 15:16:14.477 HYPERVISOR: exec_cmd: vm get_status Router1 
+Dec 22 15:16:14.478 HYPERVISOR: exec_cmd: vm slot_remove_binding Router1 0 0 
+Dec 22 15:16:14.478 HYPERVISOR: exec_cmd: vm get_status Router1 
+Dec 22 15:16:14.478 HYPERVISOR: exec_cmd: vm slot_add_binding Router1 0 0 C7200-IO-2FE 
+Dec 22 15:16:14.478 HYPERVISOR: exec_cmd: vm get_status Router1 
+Dec 22 15:16:14.478 HYPERVISOR: exec_cmd: vm slot_add_binding Router1 1 0 PA-2FE-TX 
+Dec 22 15:16:14.479 HYPERVISOR: exec_cmd: vm set_con_tcp_port Router1 5015 
+Dec 22 15:16:15.376 HYPERVISOR: exec_cmd: nio create_udp udp-3c98ac80-f089-46ae-99aa-6ab48f7bdbb6 10034 127.0.0.1 10035 
+Dec 22 15:16:15.586 HYPERVISOR: exec_cmd: vm slot_add_nio_binding Router1 0 0 udp-3c98ac80-f089-46ae-99aa-6ab48f7bdbb6 
+Dec 22 15:16:15.587 HYPERVISOR: exec_cmd: vm get_status Router1 
+Dec 22 15:16:16.054 HYPERVISOR: exec_cmd: nio create_udp udp-3a87e25d-e787-4f39-b159-626a976b166f 10046 127.0.0.1 10047 
+Dec 22 15:16:16.055 HYPERVISOR: exec_cmd: vm slot_add_nio_binding Router1 0 1 udp-3a87e25d-e787-4f39-b159-626a976b166f 
+Dec 22 15:16:16.055 HYPERVISOR: exec_cmd: vm get_status Router1 
+Dec 22 15:16:16.196 HYPERVISOR: exec_cmd: nio create_udp udp-aa609ed1-3047-45f9-8392-17c10d923329 10054 127.0.0.1 10055 
+Dec 22 15:16:16.197 HYPERVISOR: exec_cmd: vm slot_add_nio_binding Router1 1 0 udp-aa609ed1-3047-45f9-8392-17c10d923329 
+Dec 22 15:16:16.197 HYPERVISOR: exec_cmd: vm get_status Router1 
+Dec 22 15:16:21.279 HYPERVISOR: exec_cmd: vm create Ghost 0 c7200 
+Dec 22 15:16:21.279 VM: VM Ghost created.
+Dec 22 15:16:21.282 HYPERVISOR: exec_cmd: vm set_ios Ghost /home/paulogil/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Dec 22 15:16:21.283 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Dec 22 15:16:21.284 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost /home/paulogil/GNS3/projects/04_MPLS_Guide/project-files/dynamips/c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
+Dec 22 15:16:21.285 HYPERVISOR: exec_cmd: vm set_ram Ghost 512 
+Dec 22 15:16:21.286 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Dec 22 15:16:21.287 HYPERVISOR: exec_cmd: vm set_config Ghost configs/i0_startup-config.cfg 
+Dec 22 15:16:21.287 HYPERVISOR: exec_cmd: vm start Ghost 
+Dec 22 15:16:21.625 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Dec 22 15:16:21.625 HYPERVISOR: exec_cmd: vm stop Ghost 
+Dec 22 15:16:21.776 VM: VM Ghost shutdown.
+Dec 22 15:16:21.777 HYPERVISOR: exec_cmd: vm extract_config Ghost 
+Dec 22 15:16:21.778 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Dec 22 15:16:21.778 VM: VM Ghost destroyed.
+Dec 22 15:16:21.781 HYPERVISOR: exec_cmd: vm set_ghost_status Router1 2 
+Dec 22 15:16:21.781 HYPERVISOR: exec_cmd: vm set_ghost_file Router1 /home/paulogil/GNS3/projects/04_MPLS_Guide/project-files/dynamips/c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
+Dec 22 15:16:21.782 HYPERVISOR: exec_cmd: vm get_status Router1 
+Dec 22 15:16:21.783 HYPERVISOR: exec_cmd: vm set_config Router1 configs/i1_startup-config.cfg configs/i1_private-config.cfg 
+Dec 22 15:16:21.783 HYPERVISOR: exec_cmd: vm start Router1 
+Dec 22 15:16:51.990 HYPERVISOR: exec_cmd: vm extract_config Router1 
+Dec 22 15:25:52.037 HYPERVISOR: exec_cmd: vm extract_config Router1 
+Dec 22 15:26:22.041 HYPERVISOR: exec_cmd: vm extract_config Router1 
+Dec 22 15:32:17.463 HYPERVISOR: exec_cmd: vm get_status Router1 
+Dec 22 15:32:17.465 HYPERVISOR: exec_cmd: vm stop Router1 
+Dec 22 15:32:17.589 VM: VM Router1 shutdown.
+Dec 22 15:32:17.591 HYPERVISOR: exec_cmd: vm extract_config Router1 
+Dec 22 15:32:34.920 HYPERVISOR: exec_cmd: vm get_status Router1 
+Dec 22 15:32:34.923 HYPERVISOR: exec_cmd: vm extract_config Router1 
+Dec 22 15:32:35.393 HYPERVISOR: exec_cmd: vm get_status Router1 
+Dec 22 15:32:35.394 HYPERVISOR: exec_cmd: vm extract_config Router1 
+Dec 22 15:32:35.397 HYPERVISOR: exec_cmd: vm delete Router1 
+Dec 22 15:32:35.398 VM: VM Router1 destroyed.
+Dec 22 15:32:35.399 HYPERVISOR: exec_cmd: hypervisor stop 
+Dec 22 15:32:35.841 HYPERVISOR: Stopped.
+Dec 22 15:32:35.841 GENERAL: reset done.
