@@ -1,0 +1,2 @@
+set pcname VLAN20_3
+ip 10.1.1.103 24
