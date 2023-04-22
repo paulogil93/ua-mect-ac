@@ -1,5 +1,7 @@
 # Final Project
 
+![AC Project](./ac_project.png)
+
 ## Start procedure
 
 ### Ping Client X interfaces
