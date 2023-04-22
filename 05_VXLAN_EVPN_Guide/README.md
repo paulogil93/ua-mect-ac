@@ -2,6 +2,8 @@
 
 ## Part 1 - VXLAN
 
+![VXLAN](./VXLAN_1.png)
+
 ### Core Router
 
 ```
@@ -113,6 +115,8 @@ commit
 ```
 
 ## Part 2 - L2VPN/EVPN with VXLAN transport
+
+![L2VPN with VXLAN transport](./VXLAN_2.png)
 
 ### Core Router
 
