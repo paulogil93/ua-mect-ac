@@ -1,4 +1,6 @@
-# MPBGP Guide Commands
+# MPBGP Guide
+
+![MPBGP Intro](./MPBGP_Intro.png)
 
 ## Router1
 
