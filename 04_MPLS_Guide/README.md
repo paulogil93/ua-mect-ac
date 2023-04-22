@@ -1,5 +1,7 @@
 # MPLS Guide
 
+![MPLS](./MPLS.png)
+
 ## Router A
 
 ```
