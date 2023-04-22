@@ -1,4 +1,6 @@
-# MPBGP Advanced Guide Commands
+# MPBGP Advanced Guide
+
+![MPBGP Advanced](./MPBGP_Advanced.png)
 
 # RouterA
 
